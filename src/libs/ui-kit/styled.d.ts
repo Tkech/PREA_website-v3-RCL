@@ -43,12 +43,40 @@ interface ThemeSimplePaletteColorOptions extends SimplePaletteColorOptions {
 }
 
 export interface ThemePalette {
-  common: Partial<CommonColors>;
-  background: Partial<TypeBackground>;
-  grey: ColorPartial;
-  info: ThemeSimplePaletteColorOptions;
-  primary: ThemeSimplePaletteColorOptions;
+  dark: TDarkColor;
+  light: TLightColor;
+  accent: TAccentColor;
+  special: TSpecialColor;
 }
+
+type TSpecialColor = {
+  info: string;
+  success: string;
+  warning: string;
+  danger: string;
+};
+type TAccentColor = {
+  pressed: string;
+  primary: string;
+  hover: string;
+  opacity_05: string;
+  opacity_03: string;
+  opacity_010: string;
+};
+interface TLightColor extends TMainColor {
+  white: string;
+}
+interface TDarkColor extends TMainColor {
+  dark: string;
+}
+
+type TMainColor = {
+  primary: string;
+  secondary: string;
+  terteriary: string;
+  quaternary: string;
+  background: string;
+};
 
 interface FontProps {
   fontSize: number;
@@ -57,6 +85,7 @@ interface FontProps {
   fontFamily?: string;
   letterSpacing: number;
 }
+
 type TSpacing = number | "auto";
 export type Types = Record<FontEntry, FontProps>;
 interface CustomThemeOptions {

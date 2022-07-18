@@ -11,26 +11,35 @@ export enum DeviceSizes {
 }
 
 const palette: ThemePalette = {
-  common: {
-    black: "#323434",
-    white: "#FBFCFD",
+  dark: {
+    dark: "#000",
+    primary: "#272937",
+    secondary: "rgba(39, 41, 55, 0.75)",
+    tertiary: "rgba(39, 41, 55, 0.35))",
+    quaternary: "rgba(39, 41, 55, 0.12)",
+    background: "rgba(39, 41, 55, 0.05)",
   },
-  background: {
-    default: "#FBFCFD",
+  light: {
+    white: "#fff",
+    primary: "rgba(255, 255, 255, 0.93)",
+    secondary: "rgba(255, 255, 255, 0.65)",
+    tertiary: "rgba(255, 255, 255, 0.35)",
+    quaternary: "rgba(255, 255, 255, 0.2)",
+    background: "rgba(255, 255, 255, 0.1)",
   },
-  grey: {
-    100: "#F2F2F3",
-    500: "#8C8E91",
-    700: "#808080",
+  special: {
+    info: "#3385FF",
+    success: "#48B527",
+    warning: "#FFB649",
+    danger: "#FF3A30",
   },
-  info: {
-    main: "#F5DF4D", //F5DF4D
-    hover: "#f6d605",
-    blue: "#1546f5",
-  },
-  primary: {
-    main: "#93A9D2",
-    hover: "#5880cb",
+  accent: {
+    pressed: "#005CE5",
+    primary: "#0066FF",
+    hover: "#3385FF",
+    opacity_05: "rgba(0, 102, 255, 0.5)",
+    opacity_03: "rgba(0, 102, 255, 0.3)",
+    opacity_010: "rgba(0, 102, 255, 0.1)",
   },
 };
 
