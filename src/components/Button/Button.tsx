@@ -8,14 +8,14 @@ export interface ButtonProps {
 
 export const Button = (props: ButtonProps) => {
   return (
-    <Layout>
-      <ButtonWrapper>{props.label}</ButtonWrapper>
-    </Layout>
+    // <Layout>
+    <ButtonWrapper>{props.label}</ButtonWrapper>
+    // </Layout>
   );
 };
 
 export const ButtonWrapper = styled.div`
-  background: ${(p) => p.theme.palette.common.black};
+  background: ${(p) => p.theme.palette.common.white};
   margin-bottom: ${(p) => p.theme.spacing(5)};
   ${(p) => p.theme.breakpoints.down("lg")} {
     ${(p) => p.theme.font("body4")};

@@ -29,6 +29,7 @@ const palette: ThemePalette = {
     main: "#93A9D2",
   },
 };
+
 const types: Types = {
   h1: {
     fontSize: 32,
@@ -158,7 +159,7 @@ export const theme: Theme = createTheme({
       font-size: ${fontSize}px;
       line-height: ${lineHeight};
       font-weight: ${fontWeight};
-      font-family: ${fontFamily ?? '"Inter", sans-serif'};
+      font-family: ${fontFamily ?? '"InterP", sans-serif'};
     `;
   },
 });
