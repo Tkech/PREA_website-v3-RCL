@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/tkech"
   },
-  "version": "0.0.6",
+  "version": "0.1.1",
   "description": "A test example of RCL",
   "scripts": {
     "rollup": "rollup -c",
