@@ -3,11 +3,11 @@ import { createTheme, Theme } from "@mui/material/styles";
 import { ThemePalette, Types } from "../../styled";
 
 export enum DeviceSizes {
-  xs = 360,
-  sm = 768,
-  md = 1024,
-  lg = 1366,
-  xl = 1920,
+  xs = 400,
+  sm = 734,
+  md = 1068,
+  lg = 1180,
+  xl = 1441,
 }
 
 const palette: ThemePalette = {

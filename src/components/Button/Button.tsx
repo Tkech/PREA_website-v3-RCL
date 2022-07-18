@@ -15,12 +15,13 @@ export const Button = (props: ButtonProps) => {
 };
 
 export const ButtonWrapper = styled.div`
-  background: ${(p) => p.theme.palette.common.white};
+  background: ${(p) => p.theme.palette.special.success};
   margin-bottom: ${(p) => p.theme.spacing(5)};
+  ${(p) => p.theme.font("h_28mb")};
   ${(p) => p.theme.breakpoints.down("lg")} {
-    ${(p) => p.theme.font("body4")};
+    ${(p) => p.theme.font("h_78b")};
   }
   ${(p) => p.theme.breakpoints.down("md")} {
-    flex-direction: column;
+    background: ${(p) => p.theme.palette.special.danger};
   }
 `;
