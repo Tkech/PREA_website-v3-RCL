@@ -1,5 +1,12 @@
-import { DeviceSizes } from '@ui-kit';
-import { createContext, FC, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  FC,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { DeviceSizes } from "../theme";
 
 type TDeviceType = keyof typeof DeviceSizes;
 
@@ -23,8 +30,8 @@ const DEFAULT_DEVICE_MATCH: TDeviceMatch = {
 const DeviceMatchContext = createContext(DEFAULT_DEVICE_MATCH);
 
 const getDeviceMatch = (deviceType: TDeviceType): TDeviceMatch => {
-  const mobile = deviceType === 'xs' || deviceType === 'sm';
-  const desktop = deviceType === 'md' || deviceType === 'lg';
+  const mobile = deviceType === "xs" || deviceType === "sm";
+  const desktop = deviceType === "md" || deviceType === "lg";
 
   return {
     ...DEFAULT_DEVICE_MATCH,
@@ -39,22 +46,22 @@ const getDeviceTypeFromWindowSize = (): TDeviceType => {
   const windowWidth = window.innerWidth;
 
   if (windowWidth < DeviceSizes.sm) {
-    return 'xs';
+    return "xs";
   }
 
   if (windowWidth < DeviceSizes.md) {
-    return 'sm';
+    return "sm";
   }
 
   if (windowWidth < DeviceSizes.lg) {
-    return 'md';
+    return "md";
   }
 
   if (windowWidth < DeviceSizes.xl) {
-    return 'lg';
+    return "lg";
   }
 
-  return 'xl';
+  return "xl";
 };
 
 interface IDeviceMatchProviderProps {
@@ -62,10 +69,16 @@ interface IDeviceMatchProviderProps {
   children: React.ReactNode;
 }
 
-export const DeviceMatchProvider: FC<IDeviceMatchProviderProps> = ({ deviceType: initialDeviceType, children }) => {
+export const DeviceMatchProvider: FC<IDeviceMatchProviderProps> = ({
+  deviceType: initialDeviceType,
+  children,
+}) => {
   const [deviceType, setDeviceType] = useState(initialDeviceType);
 
-  const deviceMatch = useMemo(() => getDeviceMatch(deviceType ?? 'xs'), [deviceType]);
+  const deviceMatch = useMemo(
+    () => getDeviceMatch(deviceType ?? "xs"),
+    [deviceType]
+  );
 
   useEffect(() => {
     setDeviceType(getDeviceTypeFromWindowSize());
@@ -74,12 +87,16 @@ export const DeviceMatchProvider: FC<IDeviceMatchProviderProps> = ({ deviceType:
       setDeviceType(getDeviceTypeFromWindowSize());
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <DeviceMatchContext.Provider value={deviceMatch}>{children}</DeviceMatchContext.Provider>;
+  return (
+    <DeviceMatchContext.Provider value={deviceMatch}>
+      {children}
+    </DeviceMatchContext.Provider>
+  );
 };
 
 export function useDeviceMatch(): TDeviceMatch {
@@ -88,5 +105,5 @@ export function useDeviceMatch(): TDeviceMatch {
     return deviceType;
   }
 
-  throw new Error('DeviceType is misconfigured - Device provider missing');
+  throw new Error("DeviceType is misconfigured - Device provider missing");
 }

@@ -17,11 +17,14 @@ export const Button = (props: ButtonProps) => {
 export const ButtonWrapper = styled.div`
   background: ${(p) => p.theme.palette.special.success};
   margin-bottom: ${(p) => p.theme.spacing(5)};
+  background: ${(p) => console.log("normal")};
   ${(p) => p.theme.font("h_28mb")};
+
   ${(p) => p.theme.breakpoints.down("lg")} {
     ${(p) => p.theme.font("h_78b")};
   }
-  ${(p) => p.theme.breakpoints.down("md")} {
+  ${(p) => p.theme.breakpoints.down("sm")} {
     background: ${(p) => p.theme.palette.special.danger};
+    background: ${(p) => console.log("md")};
   }
 `;
