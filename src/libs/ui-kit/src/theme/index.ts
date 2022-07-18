@@ -12,7 +12,7 @@ export enum DeviceSizes {
 
 const palette: ThemePalette = {
   dark: {
-    dark: "#000",
+    black: "#000",
     primary: "#272937",
     secondary: "rgba(39, 41, 55, 0.75)",
     tertiary: "rgba(39, 41, 55, 0.35))",
@@ -40,6 +40,12 @@ const palette: ThemePalette = {
     opacity_05: "rgba(0, 102, 255, 0.5)",
     opacity_03: "rgba(0, 102, 255, 0.3)",
     opacity_010: "rgba(0, 102, 255, 0.1)",
+  },
+  shadows: {
+    lvl_1: "0px 2px 8px rgba(27, 32, 50, 0.08)",
+    lvl_2: "0px 6px 24px rgba(27, 32, 50, 0.1)",
+    lvl_3: "0px 10px 40px rgba(27, 32, 50, 0.12)",
+    lvl_4: "0px 24px 128px rgba(27, 32, 50, 0.14)",
   },
 };
 
@@ -214,9 +220,9 @@ const types: Types = {
 };
 
 const inputStyles = {
-  ...types.body2,
+  ...types.p_16mr,
   padding: "12px 16px",
-  color: palette.common.black,
+  color: palette.dark.black,
 };
 
 export const theme: Theme = createTheme({
@@ -238,7 +244,7 @@ export const theme: Theme = createTheme({
         },
         root: {
           borderRadius: 5,
-          color: palette.common.black,
+          color: palette.dark.black,
         },
       },
     },
@@ -249,7 +255,7 @@ export const theme: Theme = createTheme({
         },
         root: {
           borderRadius: 5,
-          color: palette.common.black,
+          color: palette.dark.black,
         },
       },
     },
@@ -260,14 +266,14 @@ export const theme: Theme = createTheme({
         },
         root: {
           borderRadius: 5,
-          color: palette.common.black,
+          color: palette.dark.black,
         },
       },
     },
     MuiTextField: {
       styleOverrides: {
         root: {
-          color: palette.common.black,
+          color: palette.dark.black,
         },
       },
     },

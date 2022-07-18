@@ -47,6 +47,7 @@ export interface ThemePalette {
   light: TLightColor;
   accent: TAccentColor;
   special: TSpecialColor;
+  shadows: TShadows;
 }
 
 type TSpecialColor = {
@@ -67,15 +68,22 @@ interface TLightColor extends TMainColor {
   white: string;
 }
 interface TDarkColor extends TMainColor {
-  dark: string;
+  black: string;
 }
 
 type TMainColor = {
   primary: string;
   secondary: string;
-  terteriary: string;
+  tertiary: string;
   quaternary: string;
   background: string;
+};
+
+type TShadows = {
+  lvl_1: string;
+  lvl_2: string;
+  lvl_3: string;
+  lvl_4: string;
 };
 
 interface FontProps {
@@ -87,7 +95,9 @@ interface FontProps {
 }
 
 type TSpacing = number | "auto";
+
 export type Types = Record<FontEntry, FontProps>;
+
 interface CustomThemeOptions {
   palette: ThemePalette;
   spacing(...values: TSpacing[]): string;
