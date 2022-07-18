@@ -10,24 +10,44 @@ import {
 } from "@mui/material/styles/createPalette";
 
 type FontEntry =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "body1"
-  | "body2"
-  | "body3"
-  | "body4"
-  | "body5"
-  | "body6"
-  | "body7";
+  | "h_93sb"
+  | "h_78sb"
+  | "h_78b"
+  | "h_68b"
+  | "h_68mr"
+  | "h_68b"
+  | "h_58sb"
+  | "h_54sb"
+  | "h_48sb"
+  | "h_33sb"
+  | "h_32mb"
+  | "h_28mb"
+  | "h_28sb"
+  | "h_26br"
+  | "h_26sb"
+  | "h_24br"
+  | "h_21mb"
+  | "h_18m"
+  | "h_16mb"
+  | "p_24mb"
+  | "p_24br"
+  | "p_24sb"
+  | "p_21br"
+  | "p_18mb"
+  | "p_16mr"
+  | "btn_26br";
+
+interface ThemeSimplePaletteColorOptions extends SimplePaletteColorOptions {
+  hover?: string;
+  blue?: string;
+}
 
 export interface ThemePalette {
   common: Partial<CommonColors>;
   background: Partial<TypeBackground>;
   grey: ColorPartial;
-  info: SimplePaletteColorOptions;
-  primary: SimplePaletteColorOptions;
+  info: ThemeSimplePaletteColorOptions;
+  primary: ThemeSimplePaletteColorOptions;
 }
 
 interface FontProps {
@@ -35,6 +55,7 @@ interface FontProps {
   lineHeight: number;
   fontWeight: number;
   fontFamily?: string;
+  letterSpacing: number;
 }
 type TSpacing = number | "auto";
 export type Types = Record<FontEntry, FontProps>;
