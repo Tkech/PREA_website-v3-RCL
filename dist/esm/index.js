@@ -1,2 +1,2 @@
-import e from"react";!function(e,t){void 0===t&&(t={});var n=t.insertAt;if(e&&"undefined"!=typeof document){var o=document.head||document.getElementsByTagName("head")[0],d=document.createElement("style");d.type="text/css","top"===n&&o.firstChild?o.insertBefore(d,o.firstChild):o.appendChild(d),d.styleSheet?d.styleSheet.cssText=e:d.appendChild(document.createTextNode(e))}}("button {\n\tfont-size: 60px;\n}\n");const t=t=>e.createElement("button",null,t.label);export{t as Button};
+import t from"react";const e=e=>t.createElement("button",null,e.label);export{e as Button};
 //# sourceMappingURL=index.js.map
