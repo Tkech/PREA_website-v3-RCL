@@ -1,6 +1,6 @@
-import { createTheme, Theme } from "@mui/material/styles";
+import { createTheme, Theme } from '@mui/material/styles';
 
-import { ThemePalette, Types } from "../../styled";
+import { ThemePalette, Types } from '../../styled';
 
 export enum DeviceSizes {
   xs = 400,
@@ -12,40 +12,40 @@ export enum DeviceSizes {
 
 const palette: ThemePalette = {
   dark: {
-    black: "#000",
-    primary: "#272937",
-    secondary: "rgba(39, 41, 55, 0.75)",
-    tertiary: "rgba(39, 41, 55, 0.35))",
-    quaternary: "rgba(39, 41, 55, 0.12)",
-    background: "rgba(39, 41, 55, 0.05)",
+    black: '#000',
+    primary: '#272937',
+    secondary: 'rgba(39, 41, 55, 0.75)',
+    tertiary: 'rgba(39, 41, 55, 0.35)',
+    quaternary: 'rgba(39, 41, 55, 0.12)',
+    background: 'rgba(39, 41, 55, 0.05)',
   },
   light: {
-    white: "#fff",
-    primary: "rgba(255, 255, 255, 0.93)",
-    secondary: "rgba(255, 255, 255, 0.65)",
-    tertiary: "rgba(255, 255, 255, 0.35)",
-    quaternary: "rgba(255, 255, 255, 0.2)",
-    background: "rgba(255, 255, 255, 0.1)",
+    white: '#fff',
+    primary: 'rgba(255, 255, 255, 0.93)',
+    secondary: 'rgba(255, 255, 255, 0.65)',
+    tertiary: 'rgba(255, 255, 255, 0.35)',
+    quaternary: 'rgba(255, 255, 255, 0.2)',
+    background: 'rgba(255, 255, 255, 0.1)',
   },
   special: {
-    info: "#3385FF",
-    success: "#48B527",
-    warning: "#FFB649",
-    danger: "#FF3A30",
+    info: '#3385FF',
+    success: '#48B527',
+    warning: '#FFB649',
+    danger: '#FF3A30',
   },
   accent: {
-    pressed: "#005CE5",
-    primary: "#0066FF",
-    hover: "#3385FF",
-    opacity_05: "rgba(0, 102, 255, 0.5)",
-    opacity_03: "rgba(0, 102, 255, 0.3)",
-    opacity_010: "rgba(0, 102, 255, 0.1)",
+    pressed: '#005CE5',
+    primary: '#0066FF',
+    hover: '#3385FF',
+    opacity_05: 'rgba(0, 102, 255, 0.5)',
+    opacity_03: 'rgba(0, 102, 255, 0.3)',
+    opacity_010: 'rgba(0, 102, 255, 0.1)',
   },
   shadows: {
-    lvl_1: "0px 2px 8px rgba(27, 32, 50, 0.08)",
-    lvl_2: "0px 6px 24px rgba(27, 32, 50, 0.1)",
-    lvl_3: "0px 10px 40px rgba(27, 32, 50, 0.12)",
-    lvl_4: "0px 24px 128px rgba(27, 32, 50, 0.14)",
+    lvl_1: '0px 2px 8px rgba(27, 32, 50, 0.08)',
+    lvl_2: '0px 6px 24px rgba(27, 32, 50, 0.1)',
+    lvl_3: '0px 10px 40px rgba(27, 32, 50, 0.12)',
+    lvl_4: '0px 24px 128px rgba(27, 32, 50, 0.14)',
   },
 };
 
@@ -221,7 +221,7 @@ const types: Types = {
 
 const inputStyles = {
   ...types.p_16mr,
-  padding: "12px 16px",
+  padding: '12px 16px',
   color: palette.dark.black,
 };
 
@@ -283,14 +283,11 @@ export const theme: Theme = createTheme({
 
   spacing(...values) {
     const FACTOR = 6;
-    return values
-      .map((value) => (value === "auto" ? value : `${value * FACTOR}px`))
-      .join(" ");
+    return values.map(value => (value === 'auto' ? value : `${value * FACTOR}px`)).join(' ');
   },
 
   font(type) {
-    const { fontSize, lineHeight, fontWeight, fontFamily, letterSpacing } =
-      types[type];
+    const { fontSize, lineHeight, fontWeight, fontFamily, letterSpacing } = types[type];
     return `
       font-size: ${fontSize}px;
       line-height: ${lineHeight}px;
